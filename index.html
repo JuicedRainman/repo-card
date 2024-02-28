@@ -26,57 +26,14 @@
       display: inline-block;
       margin-right: 6px;
     }
+
+    .description {
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
-  <div class="repo-card" data-repo="juicedrainman/consolefilemanager"></div>
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const repoCard = document.querySelector('.repo-card');
-      const repoName = repoCard.dataset.repo;
-      const repoData = await fetchRepoData(`https://api.github.com/repos/${repoName}`);
-      const colorsData = await fetchColorsData('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json');
-
-      if (repoData && colorsData) {
-        const languageColor = repoData.language ? getLanguageColor(repoData.language, colorsData) : '#ccc';
-        repoCard.innerHTML = `
-          <h2><a href="${repoData.html_url}" target="_blank">${repoData.full_name}</a></h2>
-          <p>${repoData.description || 'No description provided'}</p>
-          <div>
-            <span class="language-dot" style="background-color: ${languageColor}"></span>
-            <span>${repoData.language || 'Unknown'}</span>
-          </div>
-          <p>${repoData.fork ? 'Forked from <a href="' + repoData.source.html_url + '" target="_blank">' + repoData.source.full_name + '</a>' : ''}</p>
-          <p>Stars: ${repoData.stargazers_count}</p>
-          <p>Forks: ${repoData.forks}</p>
-        `;
-      }
-    });
-
-    async function fetchRepoData(url) {
-      try {
-        const response = await fetch(url);
-        return response.ok ? await response.json() : null;
-      } catch (error) {
-        console.error('Error fetching repo data:', error);
-        return null;
-      }
-    }
-
-    async function fetchColorsData(url) {
-      try {
-        const response = await fetch(url);
-        return response.ok ? await response.json() : null;
-      } catch (error) {
-        console.error('Error fetching colors data:', error);
-        return null;
-      }
-    }
-
-    function getLanguageColor(language, colorsData) {
-      const colors = colorsData[language];
-      return colors ? colors.color : '#ccc';
-    }
-  </script>
+  <div class="repo-card" data-repo="juicedrainman/repo-card"></div>
+  <script src="repo-card.js"></script>
 </body>
 </html>
