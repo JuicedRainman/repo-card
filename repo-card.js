@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const repoCard = document.querySelector('.repo-card');
-
     const repoName = repoCard.dataset.repo;
     const repoData = await fetchRepoData(`https://api.github.com/repos/${repoName}`);
     const colorsData = await fetchColorsData('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json');
@@ -16,8 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <span>${repoData.language || 'Unknown'}</span>
             </div>
             <p>${repoData.fork ? 'Forked from <a href="' + repoData.source.html_url + '" target="_blank">' + repoData.source.full_name + '</a>' : ''}</p>
-            <p>Stars: ${repoData.stargazers_count}</p>
-            <p>Forks: ${repoData.forks}</p>
+            <p>Stars: ${repoData.stargazers_count} Forks: ${repoData.forks}</p>
         `;
     }
 });
