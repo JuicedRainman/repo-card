@@ -17,6 +17,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             <p>${repoData.fork ? 'Forked from <a href="' + repoData.source.html_url + '" target="_blank">' + repoData.source.full_name + '</a>' : ''}</p>
             <p>Stars: ${repoData.stargazers_count} Forks: ${repoData.forks}</p>
         `;
+
+    // Check if repository has a website and add a link to it
+    if (repoData.homepage) {
+        const websiteLink = document.createElement('a');
+        websiteLink.href = repoData.homepage;
+        websiteLink.textContent = 'View Website';
+        repoCard.appendChild(websiteLink);
+    }
     }
 });
 
