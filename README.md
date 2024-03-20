@@ -1,6 +1,6 @@
 # repo-card
 
-repo-card is a simple, clean and efficient repository card (generator) that supports all language colors. 
+Repo-card is a simple, clean and efficient repository card (generator) that supports all language colors. 
 
 
 ## Example
@@ -10,7 +10,7 @@ repo-card is a simple, clean and efficient repository card (generator) that supp
 ## Features
 
 - Simple and Clean: A minimalist design with only necessary information displayed
-- efficient
+- Efficient
 - Supports all language colors
 - Shows the source repository if forked from another project
 
@@ -23,7 +23,7 @@ repo-card is a simple, clean and efficient repository card (generator) that supp
   <script src="repo-card.js"></script>
 ```
 - change the data-repo to the repository you want to show.
-- make sure the styling is included in a css page or included in a styling tag.
+- all done! It's as simple as that!
 
 ## Acknowledgments
 
@@ -32,4 +32,4 @@ Big thanks to [ozh/github-colors](https://github.com/ozh/github-colors) for prov
 
 ## License
 
-GitHub Repo Card is licensed under the [GNU GPLv3](LICENSE), so feel free to use it, modify it, and share it with others.
+repo-card is licensed under the [GNU GPLv3](LICENSE), so feel free to use it within the license's guidelines.

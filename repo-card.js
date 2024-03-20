@@ -8,23 +8,43 @@ document.addEventListener('DOMContentLoaded', async () => {
         const languageColor = repoData.language ? getLanguageColor(repoData.language, colorsData) : '#ccc';
 
         repoCard.innerHTML = `
+            <style>
+            .repo-card {
+                font-family: Arial, sans-serif;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                background-color: #0E0F1F;
+                color: white;
+                padding: 16px;
+                margin: 20px;
+                max-width: 400px;
+            }
+            .repo-card a {
+                text-decoration: none;
+                color: #0366d6;
+            }
+            .language-dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                display: inline-block;
+                margin-right: 6px;
+            }
+            .description {
+                font-style: italic;
+                color: white;
+            }
+            </style>
             <h2><a href="${repoData.html_url}" target="_blank">${repoData.full_name}</a></h2>
-            <p class="description">${repoData.description || 'No description provided'}</p>
+            ${repoData.homepage ? `<p><a href="${repoData.homepage}" target="_blank">View Website</a></p>` : ''}
             <div>
                 <span class="language-dot" style="background-color: ${languageColor}"></span>
                 <span>${repoData.language || 'Unknown'}</span>
             </div>
+            <p class="description">${repoData.description || 'No description provided'}</p>
             <p>${repoData.fork ? 'Forked from <a href="' + repoData.source.html_url + '" target="_blank">' + repoData.source.full_name + '</a>' : ''}</p>
             <p>Stars: ${repoData.stargazers_count} Forks: ${repoData.forks}</p>
         `;
-
-    // Check if repository has a website and add a link to it
-    if (repoData.homepage) {
-        const websiteLink = document.createElement('a');
-        websiteLink.href = repoData.homepage;
-        websiteLink.textContent = 'View Website';
-        repoCard.appendChild(websiteLink);
-    }
     }
 });
 
