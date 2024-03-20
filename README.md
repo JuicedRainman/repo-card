@@ -1,6 +1,6 @@
 # repo-card
 
-Repo-card is a simple, clean and efficient repository card (generator) that supports all language colors. 
+repo-card is a simple, clean and efficient repository card (generator) that supports all language colors. 
 
 
 ## Example
@@ -17,18 +17,21 @@ Repo-card is a simple, clean and efficient repository card (generator) that supp
 ## Usage
 
 - Download the `repo-card.js` file to your project directory or include it via a CDN.
-- add this script tag in the body:
+- Add this script tag inside of the `<head>` tag
+```
+  <script src="repo-card.js"></script>
+```
+- Add this line of code where you want to have the card be placed:
 ```
   <div class="repo-card" data-repo="juicedrainman/repo-card"></div>
-  <script src="repo-card.js"></script>
 ```
 - change the data-repo to the repository you want to show.
 - all done! It's as simple as that!
 
 ## Acknowledgments
 
-This project was inspired by [Tarptaeya's Repo-Card](https://github.com/Tarptaeya/repo-card) project.
-Big thanks to [ozh/github-colors](https://github.com/ozh/github-colors) for providing all the language colors.
+- This project was inspired by [Tarptaeya's Repo-Card](https://github.com/Tarptaeya/repo-card) project.
+- Big thanks to [ozh/github-colors](https://github.com/ozh/github-colors) for providing all the language colors.
 
 ## License
 
